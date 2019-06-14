@@ -70,3 +70,11 @@ mult5 = (array) => {
     return newArr
 }
 console.log(mult5(numbers))
+
+var text = 'outside'
+function logIt(){
+    console.log(text)
+    var text = 'inside'
+}
+
+logIt()
