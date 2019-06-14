@@ -48,9 +48,11 @@ var nouns = ["ducks", "elephants", "pangolin", "rhinoceros", "giraffes", "pengui
 
 animalNums = (arr1, arr2) => {
     let animals = []
+    let numHolder = arr1
     for(let j = 0; j < arr2.length; j++){
-        let i = Math.floor(Math.random() * 7)
-        animals.push(`${arr1[i]} ${arr2[j]}`)
+        let i = Math.floor(Math.random() * numHolder.length)
+        animals.push(`${numHolder[i]} ${arr2[j]}`)
+        numHolder = numHolder.slice(0, i).concat(numHolder.slice(i + 1))
     }
     return animals.join(', ')
 }
@@ -70,11 +72,3 @@ mult5 = (array) => {
     return newArr
 }
 console.log(mult5(numbers))
-
-var text = 'outside'
-function logIt(){
-    console.log(text)
-    var text = 'inside'
-}
-
-logIt()
